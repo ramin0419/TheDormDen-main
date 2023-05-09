@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "axios": "^1.4.0",
+    "jwt-decode": "^3.1.2",
+    "mongodb": "^5.4.0",
+    "nodemon": "^2.0.22",
+    "pigeon-maps": "^0.21.3",
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.11.1",
+    "styled-components": "^5.3.10",
+    "universal-cookie": "^4.0.4"
+  }
+}
