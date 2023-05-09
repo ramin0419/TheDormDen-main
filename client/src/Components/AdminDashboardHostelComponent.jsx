@@ -160,7 +160,7 @@ const AdminDashboardHostelComponent = () => {
       });
     }
   };
-  // setHostels(hostels.filter((item) => item.id !== id));
+  
   return (
     <Wrapper>
       <Container>
