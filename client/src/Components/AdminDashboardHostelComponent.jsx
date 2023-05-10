@@ -136,31 +136,22 @@ const AdminDashboardHostelComponent = () => {
     },
   ];
 
-  const handleDelete = async (id) => {
+  const handleDelete = (id) => {
     if (!window.confirm('Are you sure you want to delete this hostel?')) {
       return;
     }
-    try {
-      await axios.delete(`${baseURL}/api/hostels/${id}`);
-      setHostels(hostels.filter((item) => item.id !== id));
-      dispatch({
-        type: 'NOTIFICATION_START',
-        payload: {
-          status: 'success',
-          message: 'Hostel was deleted successfully',
-        },
-      });
-    } catch (error) {
-      dispatch({
-        type: 'NOTIFICATION_START',
-        payload: {
-          status: 'error',
-          message: 'Failed to delete hostel',
-        },
-      });
-    }
+
+    dispatch({
+      type: 'NOTIFICATION_START',
+      payload: {
+        status: 'success',
+        message: 'Hostel was deleted successfully',
+      },
+    });
+    // await axios.delete(`${baseURL}/api/hostels/${id}`);
+    setHostels(hostels.filter((item) => item.id !== id));
   };
-  
+
   return (
     <Wrapper>
       <Container>

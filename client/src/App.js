@@ -101,12 +101,13 @@ const App = () => {
             element={<UserDashboardPasswordComponent />}
           />
           <Route path="hostels" element={<UserDashboardHostelsComponent />} />
+          <Route path="register/hostel" element={<HostelRegistrationPage />} />
 
           <Route path="hostels/:id" element={<UserDashboardHostelEdit />} />
           <Route path="aboutus" element={<Aboutus />} />
         </Route>
       </Routes>
-      {/* <HostelRegistrationPage /> */}
+
       {/* <UserDashBoardComment /> */}
     </>
   );

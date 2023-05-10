@@ -148,9 +148,8 @@ const UserRegistrationPage = () => {
       typeof_user: 'student',
       address: 'hetauda',
     };
-    // await axios.post(`${baseUrl}/api/users/register`,user)
     await axios
-      .post(`${baseUrl}/users/register`, user)
+      .post(`${baseUrl}/home`, user)
       .then((res) => {
         // console.log(res);
         navigate('/login');
