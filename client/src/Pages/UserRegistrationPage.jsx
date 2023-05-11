@@ -149,7 +149,7 @@ const UserRegistrationPage = () => {
       address: 'hetauda',
     };
     await axios
-      .post(`${baseUrl}/home`, user)
+      .post(`${baseUrl}/api/users/register`, user)
       .then((res) => {
         // console.log(res);
         navigate('/login');
@@ -163,7 +163,7 @@ const UserRegistrationPage = () => {
   return (
     <>
       <Helmet>
-        <title>Dormden | User Registration </title>
+        <title>4everStay | User Registration </title>
         <meta
           name="description"
           content="Register your account here with your auth id"

@@ -67,6 +67,7 @@ const App = () => {
         <Route path="/register/user" element={<UserRegistrationPage />} />
         <Route path="/register/hostel" element={<HostelRegistrationPage />} />
         <Route path="/user/comment" element={<UserDashBoardComment />} />
+        <Route path="/aboutus" element={<Aboutus />} />
         <Route
           path="/admin"
           element={
@@ -104,7 +105,6 @@ const App = () => {
           <Route path="register/hostel" element={<HostelRegistrationPage />} />
 
           <Route path="hostels/:id" element={<UserDashboardHostelEdit />} />
-          <Route path="aboutus" element={<Aboutus />} />
         </Route>
       </Routes>
 
