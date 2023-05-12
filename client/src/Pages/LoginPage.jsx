@@ -13,7 +13,7 @@ const LoginPage = () => {
     <>
       <Helmet>
         <title>4EverStay | Login</title>
-        <meta name="description" content="Login to dormden application" />
+        <meta name="description" content="Login to our application" />
       </Helmet>
       <NotificationBar />
       <NavAndSidebar />

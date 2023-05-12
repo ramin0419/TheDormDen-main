@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
-import logo from '../assets/Logo.svg';
+import logo from '../assets/logo.jpg';
 import Cookies from 'js-cookie';
 
 const Nav = styled.nav`
@@ -20,6 +20,9 @@ const Nav = styled.nav`
 `;
 const LogoDiv = styled(Link)`
   cursor: pointer;
+  width: 200px;
+  height: 50px;
+  display: flex;
 `;
 const Navlinks = styled.div`
   width: 30%;

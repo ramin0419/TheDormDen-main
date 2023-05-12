@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "backend api for TheDormDen",
+  "description": "backend api for 4EverStay",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
