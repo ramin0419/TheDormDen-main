@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
-import logo from '../assets/logo.jpg';
+import logo from '../assets/Logo.svg';
+import Cookies from 'js-cookie';
 
 const Nav = styled.nav`
   background: ${({ scrollNav }) => (scrollNav ? '#fff' : '#eeeeee6e')};
@@ -19,9 +20,6 @@ const Nav = styled.nav`
 `;
 const LogoDiv = styled(Link)`
   cursor: pointer;
-  width: 200px;
-  height: 50px;
-  display: flex;
 `;
 const Navlinks = styled.div`
   width: 30%;
@@ -92,14 +90,20 @@ const MobileIcon = styled.div`
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
+  const navigate = useNavigate();
+  const logout = () => {
+    Cookies.remove('logincookies');
+
+    navigate('/login');
+  };
   const changeNav = () => {
-    // console.log(window.scrollY)
     if (window.scrollY >= 20) {
       setScrollNav(true);
     } else {
       setScrollNav(false);
     }
   };
+  console.log(Cookies.get('logincookies'));
 
   useEffect(() => {
     window.addEventListener('scroll', changeNav);
@@ -113,10 +117,15 @@ const Navbar = ({ toggle }) => {
       <Navlinks>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>
-        <NavLink to="/login">Login</NavLink>
         <SideBtnWrap>
-          <SidebarRoute to="/admin">Profile</SidebarRoute>
+          {Cookies.get('logincookies') ? (
+            <SidebarRoute to="/admin">Profile</SidebarRoute>
+          ) : (
+            <SidebarRoute to="/login">Login</SidebarRoute>
+          )}
         </SideBtnWrap>
+
+        <NavLink onClick={logout}>logout</NavLink>
       </Navlinks>
       <MobileIcon onClick={toggle}>
         <FaBars />

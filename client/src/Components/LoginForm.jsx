@@ -9,6 +9,7 @@ import { proxy } from '../assets/proxy';
 import InputComponent from './InputComponent';
 import { AuthContext } from '../context/AuthContext';
 import { NotificationContext } from '../context/NotificationContext';
+import Cookies from 'universal-cookie';
 
 export const Container = styled.div`
   margin-top: 74px;
@@ -115,6 +116,9 @@ const LoginForm = () => {
         token: response.data.token,
       };
       dispatch({ type: 'LOGIN_SUCCESS', payload: userObject });
+
+      const cookies = new Cookies();
+      cookies.set('logincookies', 'Pacman', { path: '/' });
       navigate('/');
     } catch (error) {
       dispatch({ type: 'LOGIN_FAILURE', payload: error.response.data });
