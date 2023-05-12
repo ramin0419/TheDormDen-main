@@ -124,8 +124,6 @@ const Navbar = ({ toggle }) => {
             <SidebarRoute to="/login">Login</SidebarRoute>
           )}
         </SideBtnWrap>
-
-        <NavLink onClick={logout}>logout</NavLink>
       </Navlinks>
       <MobileIcon onClick={toggle}>
         <FaBars />

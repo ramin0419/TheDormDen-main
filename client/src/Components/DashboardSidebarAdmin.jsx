@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaHome, FaRegUser, FaBed, FaUserCheck, FaHotel } from 'react-icons/fa';
 import { BsStars } from 'react-icons/bs';
 
 import { RiFeedbackLine } from 'react-icons/ri';
 import { FiLogOut } from 'react-icons/fi';
-
+import Cookies from 'js-cookie';
 const Wrapper = styled.div`
   flex: 1;
   height: 90vh;
@@ -59,6 +59,12 @@ const SidebarItemText = styled.div`
 `;
 
 const DashboardSidebarAdmin = () => {
+  const navigate = useNavigate();
+  const logout = () => {
+    Cookies.remove('logincookies');
+
+    navigate('/login');
+  };
   const iconStyle = {
     marginRight: '10px',
     fontSize: '20px',
@@ -120,7 +126,7 @@ const DashboardSidebarAdmin = () => {
             <SidebarListItem to="/">
               <SidebarItemDiv>
                 <FiLogOut style={iconStyle} />
-                <SidebarItemText>Log Out</SidebarItemText>
+                <SidebarItemText onClick={logout}>Log Out</SidebarItemText>
               </SidebarItemDiv>
             </SidebarListItem>
           </SidebarList>
