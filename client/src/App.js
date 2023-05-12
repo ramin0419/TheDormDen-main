@@ -67,7 +67,7 @@ const App = () => {
         <Route path="/register/user" element={<UserRegistrationPage />} />
         <Route path="/register/hostel" element={<HostelRegistrationPage />} />
         <Route path="/user/comment" element={<UserDashBoardComment />} />
-        <Route path="/aboutus" element={<Aboutus />} />
+        <Route path="/about" element={<Aboutus />} />
         <Route
           path="/admin"
           element={

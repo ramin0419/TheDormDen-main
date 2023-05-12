@@ -168,8 +168,14 @@ const HostelDetails = ({ hostelInfo }) => {
             <p onClick={() => handleActiveTab('r')}>Reviews</p>
           )}
         </Tabs>
-        {/* <p>Published { new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(new Date(hostelInfo.createdAt)) }</p> */}
-        <p> k halu</p>
+        <p>
+          Published{' '}
+          {new Intl.DateTimeFormat('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+          }).format(new Date(hostelInfo.createdAt))}
+        </p>
       </TabsWrapper>
       {openDescriptionOption && <HostelDescription hostelInfo={hostelInfo} />}
       {openOfferOption && <HostelAmenities hostelInfo={hostelInfo} />}

@@ -1,20 +1,19 @@
-import React from 'react'
-import styled from 'styled-components'
-import background from '../assets/background.png'
-import NavAndSidebar from '../Components/NavAndSidebar'
-import HeroSection from '../Components/HeroSection'
-import FeaturedHostels from '../Components/FeaturedHostels'
+import React from 'react';
+import styled from 'styled-components';
+import background from '../assets/background.png';
+import NavAndSidebar from '../Components/NavAndSidebar';
+import HeroSection from '../Components/HeroSection';
+import FeaturedHostels from '../Components/FeaturedHostels';
 import HighestRatingHostels from './../Components/HighestRatingHostels';
-import MailList from '../Components/MailList'
-import {Helmet} from "react-helmet";
-
+import MailList from '../Components/MailList';
+import { Helmet } from 'react-helmet';
 
 const HomeContainer = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    `
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const HomeBackground = styled.div`
   position: fixed;
@@ -27,7 +26,7 @@ const HomeBackground = styled.div`
   background-size: cover;
   z-index: -1;
   background-image: url(${background});
-`
+`;
 
 const Container = styled.div`
   margin-top: 10px;
@@ -35,8 +34,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  
-`
+`;
 
 const Title = styled.h1`
   width: 100%;
@@ -47,33 +45,34 @@ const Title = styled.h1`
   @media (max-width: 768px) {
     padding: 0 20px;
   }
-`
-
+`;
 
 const HomePage = () => {
   return (
     <>
-    <Helmet>
-        <title>Dorm Den</title>
-        <meta name="description" content="Web portal to compare and contrast different hostels around the kathmandu valley" />
-    </Helmet>
+      <Helmet>
+        <title>4EverStay</title>
+        <meta
+          name="description"
+          content="Web portal to compare and contrast different hostels around the kathmandu valley"
+        />
+      </Helmet>
       <HomeContainer>
-          <HomeBackground>
-              <img src="" alt="" />
-          </HomeBackground>
-          <NavAndSidebar/>
-          <HeroSection/>
-      <Container>
-        <Title>Featured Hostels✨</Title>
-        <FeaturedHostels />
-        <Title>Hostels Guests love❤️</Title>
-        <HighestRatingHostels />
-      </Container>
-      <MailList />
+        <HomeBackground>
+          <img src="" alt="" />
+        </HomeBackground>
+        <NavAndSidebar />
+        <HeroSection />
+        <Container>
+          <Title>Featured Hostels✨</Title>
+          <FeaturedHostels />
+          <Title>Hostels Guests love❤️</Title>
+          <HighestRatingHostels />
+        </Container>
+        <MailList />
       </HomeContainer>
-      
     </>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

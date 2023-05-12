@@ -200,7 +200,7 @@ const HostelRegistrationPage = () => {
       withCredentials: true,
     });
     if (response.statusText === 'Created') {
-      navigate('/user/hostels');
+      navigate('/');
     } else {
       alert('Something went wrong');
     }
@@ -208,7 +208,7 @@ const HostelRegistrationPage = () => {
   return (
     <>
       <Helmet>
-        <title>Dorm | Register Hostel</title>
+        <title>4everStay | Register Hostel</title>
         <meta
           name="description"
           content="Register your hostel to be showcased in ur web portal"

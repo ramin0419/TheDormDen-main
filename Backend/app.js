@@ -66,25 +66,5 @@ app.use((err, req, res, next) => {
     stack: err.stack,
   });
 });
-app.delete('/api/hostels/:id', async (req, res) => {
-  const id = req.params.id;
-
-  try {
-    const client = await MongoClient.connect(config.MONGODB_URI);
-    const db = client.db('Hostel123');
-    const hostels = db.collection('hostels');
-
-    const result = await hostels.deleteOne({ id: ObjectId(id) });
-
-    if (result.deletedCount === 1) {
-      res.status(200).json({ message: 'Hostel deleted successfully' });
-    } else {
-      res.status(404).json({ message: 'Hostel not found' });
-    }
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Internal server error' });
-  }
-});
 
 module.exports = app;

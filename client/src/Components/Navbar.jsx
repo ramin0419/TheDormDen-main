@@ -113,6 +113,7 @@ const Navbar = ({ toggle }) => {
       <Navlinks>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>
+        <NavLink to="/login">Login</NavLink>
         <SideBtnWrap>
           <SidebarRoute to="/admin">Profile</SidebarRoute>
         </SideBtnWrap>
