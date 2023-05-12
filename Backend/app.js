@@ -19,7 +19,7 @@ mongoose
     logger.error('error connecting to MongoDB: ', error.message);
   });
 
-// app.use(cors({credentials: true, origin: 'https://dormden.me'}));
+// app.use(cors({credentials: true, origin: 'https://4EverStay.me'}));
 // app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 var allowedOrigins = ['http://localhost:3000', 'http://localhost:3005'];
 app.use(
